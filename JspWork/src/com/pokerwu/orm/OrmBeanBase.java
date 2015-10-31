@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.pokerwu.orm.DBOperate;
 import com.pokerwu.orm.annotation.Table;
 
 /**
@@ -156,28 +155,8 @@ public class OrmBeanBase implements DBOperate {
 	}
 	@Override
 	public <T> T query(Class<T> clazz,String[] filds,String condition,Object[] param) {
-		/*T item;
-		try {
-			item = clazz.newInstance();
-			getTable(item);
-			StringBuilder sql = new StringBuilder("select ");
-			if (filds == null || filds.length<1)
-				sql.append("* ");
-			else{
-				for(String fild : filds ){
-					sql.append(fild).append(",");
-				}
-				sql.deleteCharAt(sql.length() - 1);
-			}
-			sql.append(" from ")
-				.append(table)
-				.append(" ")
-				.append(condition);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}*/
-		return null;
+	
+		return queryForList(clazz,filds,condition,param).get(0);
 	}
 	@Override
 	public <T> List<T> queryForList(Class<T> clazz,String[] filds,String condition,Object[] params){
