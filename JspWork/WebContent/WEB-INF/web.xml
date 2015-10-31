@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app    
+PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"    
+"http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<context-param>
+		<param-name>scanpackage</param-name>
+		<param-value>com</param-value>
+	</context-param>
+	<listener>
+		<listener-class>com.renymvc.support.ContextLoader</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>core</servlet-name>
+		<servlet-class>com.renymvc.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>viewprefix</param-name>
+			<param-value>/WEB-INF/jsp/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>viewsuffix</param-name>
+			<param-value>.jsp</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>core</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>
