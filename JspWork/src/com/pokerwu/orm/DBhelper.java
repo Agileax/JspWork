@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * @email pokerwu1994@gmail.com
  */
 public class DBhelper {
-	private final static String URL = "jdbc:mysql://localhost:3306/company?useUnicode=true&amp;characterEncoding=UTF-8";
+	private final static String URL = "jdbc:mysql://192.168.2.103:3306/jspwork?useUnicode=true&amp;characterEncoding=UTF-8";
 	private final static String NAME = "root";
 	private final static String PASSWORD = "root";
 	static{
