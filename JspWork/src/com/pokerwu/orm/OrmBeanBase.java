@@ -55,6 +55,9 @@ public class OrmBeanBase implements DBOperate {
 	}
 	private void getTable(Object obj){
 		Class<?> clazz = obj.getClass();
+		getTable(clazz);
+	}
+	private void getTable(Class<?> clazz){
 		if(clazz.isAnnotationPresent(Table.class)){
 			table = clazz.getAnnotation(Table.class).value();
 			if (table=="" || table.isEmpty())
@@ -102,17 +105,12 @@ public class OrmBeanBase implements DBOperate {
 	}
 
 	@Override
-	public void delete(Object obj) {
-		getTable(obj);
+	public void delete(Class<?> clazz ,Object id) {
+		getTable(clazz);
 		String sql = "delete from "+table+" where id = ?";
 		try {
-			Method mh = obj.getClass().getDeclaredMethod("getId");
-			Object id = mh.invoke(obj);	
-			if(id == null)
-				throw new RuntimeException("id must valid");
 			conn = DBhelper.getConnection();
 			pre = conn.prepareStatement(sql);
-			//pre.setString(1,id);
 			pre.setObject(1, id);
 			pre.execute();
 			

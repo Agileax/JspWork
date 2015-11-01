@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface DBOperate {
 	void insert(Object obj);
-	void delete(Object obj);
+	void delete(Class<?> clazz,Object id);
 	void update(Object obj);
 	<T> T query(Class<T> clazz,String[] filds,String condition,Object[] param);
 	<T> List<T> queryForList(Class<T> clazz,String[] filds,String condition,Object[] param);
