@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+.coding_style{
+	background-color : black;
+	color : #b0b0b0;
+	font-weight: 500;
+}
+.code{
+	width : 600px;
+	height : 340px;
+	position : fixed;
+	left : 50%;
+	top : 50%;
+	margin-left : -300px;
+	margin-top : -200px;
+}
+.rownum{
+	width : 50px;
+	text-align : right;
+	padding-right : 5px;
+	color : red;
+}
+.red{
+	color : #a00;
+}
+.white{
+	color : white;	
+}
+.gray{
+	color : gray;
+}
+#username, #password{
+	width : 80px;
+	height : 16px;
+	background-color : transparent;
+	border-width : 0 0 1px;
+	border-color : white;
+	color : white;
+}
+#submitButton{
+	background-color : transparent;
+	border-width : 1px;
+	border-color : white;
+	color : white;	
+	cursor : pointer;
+}

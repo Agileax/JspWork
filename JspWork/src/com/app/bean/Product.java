@@ -11,9 +11,9 @@ import com.pokerwu.orm.annotation.Table;
 public class Product {
 	private String id;
 	private String name;
-	private String model;
-	private int number;
-	private double price;
+	private String modelNum;
+	private String number;
+	private String price;
 	/**
 	 * @return the id
 	 */
@@ -41,37 +41,37 @@ public class Product {
 	/**
 	 * @return the model
 	 */
-	public String getModel() {
-		return model;
+	public String getModelNum() {
+		return modelNum;
 	}
 	/**
 	 * @param model the model to set
 	 */
-	public void setModel(String model) {
-		this.model = model;
+	public void setModelNum(String modelNum) {
+		this.modelNum = modelNum;
 	}
 	/**
 	 * @return the number
 	 */
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
 	/**
 	 * @param number the number to set
 	 */
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 	/**
 	 * @return the price
 	 */
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 	/**
 	 * @param price the price to set
 	 */
-	public void setPrice(double price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 	

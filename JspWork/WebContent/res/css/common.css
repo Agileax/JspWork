@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+body, td, th, input, textarea, div, select, p {
+	font-family: "Microsoft YaHei",SimSun, Arial,Helvetica,sans-serif;
+	font-size: 14px;
+}
+body {
+	margin: 0;
+}

@@ -95,7 +95,6 @@ public class OrmBeanBase implements DBOperate {
 			pre = conn.prepareStatement(builder.toString());
 			for(int j=0; j<values.length;j++)
 				pre.setObject(j+1, values[j]);
-			System.out.println(builder.toString());
 			pre.execute();
 			
 			close();
@@ -144,7 +143,6 @@ public class OrmBeanBase implements DBOperate {
 			pre = conn.prepareStatement(builder.toString());
 			for (int j=0;j<len;j++)
 				pre.setObject(j+1, values[j]);
-			System.out.println(builder.toString());
 			pre.execute();
 			close();
 		} catch (SQLException e) {
@@ -213,7 +211,6 @@ public class OrmBeanBase implements DBOperate {
 			obj = clazz.newInstance();
 			Method [] methods = clazz.getDeclaredMethods();
 			for(String fild:map.keySet()){
-				System.out.println(fild+"==="+ map.get(fild));
 				for(Method mh: methods){
 					String name = "set"+fild.substring(0,1).toUpperCase() + fild.substring(1);
 					if (name.equals(mh.getName())) {

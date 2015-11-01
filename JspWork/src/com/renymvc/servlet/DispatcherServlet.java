@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 import com.renymvc.annotation.AjaxAccess;
 import com.renymvc.support.UrlMappingHandler;
@@ -135,7 +135,7 @@ public class DispatcherServlet extends HttpServlet {
 	private void processHandleResult(Map<String, Object> map, HttpServletResponse resp) throws ParseException{
 		resp.setContentType("text/json");
 		resp.setCharacterEncoding("UTF-8");
-		String json = JSONArray.fromObject(map).toString();
+		String json = JSONObject.fromObject(map).toString();
 		PrintWriter out = null;
 		try {
 			try {
